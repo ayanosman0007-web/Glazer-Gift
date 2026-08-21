@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Glazer's Gift</title>
+
+    <style>
+       body {
+    background: #ffe4f0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding-top: 80px;
+}
+
+h1 {
+    color: #d96b91;
+    font-size: 38px;
+    text-shadow: 2px 2px 0px #b85c7d;
+}
+
+.subtitle {
+    color: #c94f7c;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+     .door {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    padding: 0;
+    border: 3px solid #a66b80;
+    border-radius: 4px;
+    background: #e8a9bd;
+    cursor: pointer;
+    box-shadow: 7px 7px 0px #8f5a70;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.door.opened {
+    opacity: 0.5;
+    filter: grayscale(30%);
+}
+
+.door:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 7px 10px 0px #8f5a70;
+}
+
+       #messageBox {
+    background: white;
+    width: 1000px;
+max-width: 100vw;
+max-height: 70vh;
+overflow-y: auto;
+box-sizing: border-box;
+    padding: 30px;
+border-radius: 4px;
+border: 4px solid #8f5a70;
+box-shadow: 8px 8px 0px #6f4557;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+        #messageBox h2 {
+            color: #e75480;
+        }
+
+        #messageBox p {
+font-size: 22px;
+    line-height: 1.6;
+    text-align: left;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+}
+
+        #messageBox button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            background: #e75480;
+            color: white;
+            cursor: pointer;
+        }
+
+.gift-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 100px);
+    gap: 20px;
+    justify-content: center;
+    margin: 40px auto;
+}
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    z-index: 999;
+}
+
+@keyframes popIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+#messageBox {
+    animation: popIn 0.25s ease-out;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <h1>🌽 A Little Something From Your Community 🌽</h1>
+<p class="subtitle">A little Glaze made with lots of love 🍩💕</p>
+
+<div class="gift-grid">
+    <button class="door">💌 01</button>
+<button class="door">💌 02</button>
+<button class="door">💌 03</button>
+<button class="door">💌 04</button>
+<button class="door">💌 05</button>
+<button class="door">💌 06</button>
+<button class="door">💌 07</button>
+<button class="door">💌 08</button>
+<button class="door">💌 09</button>
+<button class="door">💌 10</button>
+<button class="door">💌 11</button>
+<button class="door">💌 12</button>
+<button class="door">💌 13</button>
+<button class="door">💌 14</button>
+<button class="door">💌 15</button>
+<button class="door">💌 16</button>
+<button class="door">💌 17</button>
+<button class="door">💌 18</button>
+<button class="door">💌 19</button>
+<button class="door">💌 20</button>
+<button class="door">💌 21</button>
+<button class="door">💌 22</button>
+<button class="door">💌 23</button>
+<button class="door">💌 24</button>
+<button class="door">💌 25</button>
+<button class="door">💌 26</button>
+<button class="door">💌 27</button>
+<button class="door">💌 28</button>
+<button class="door">💌 29</button>
+<button class="door">💌 30</button>
+<button class="door">💌 31</button>
+<button class="door">💌 32</button>
+<button class="door">💌 33</button>
+<button class="door">💌 34</button>
+<button class="door">💌 35</button>
+<button class="door">💌 36</button>
+<button class="door">💌 37</button>
+<button class="door">💌 38</button>
+<button class="door">💌 39</button>
+<button class="door">💌 40</button>
+<button class="door">💌 41</button>
+<button class="door">💌 42</button>
+<button class="door">💌 43</button>
+<button class="door">💌 44</button>
+<button class="door">💌 45</button>
+<button class="door">💌 46</button>
+<button class="door">💌 47</button>
+<button class="door">💌 48</button>
+<button class="door">💌 49</button>
+<button class="door">💌 50</button>
+<button class="door">💌 51</button>
+<button class="door">💌 52</button>
+<button class="door">💌 53</button>
+<button class="door">💌 54</button>
+<button class="door">💌 55</button>
+<button class="door">💌 56</button>
+<button class="door">💌 57</button>
+<button class="door">💌 58</button>
+<button class="door">💌 59</button>
+<button class="door">💌 60</button>
+</div>
+<div id="overlay"></div>
+<div id="messageBox" style="display:none;">
+    <h2>🩷 A Message From Your Community 🩷</h2>
+    <p id="messageText">We love you and thank you for being you!</p>
+    <button onclick="closeMessage()">Close 🩷</button>
+</div>
+
+<script>
+const messages = [
+
+`<iframe width="560" height="315"
+src="https://www.youtube.com/embed/svJ7JGj4SOM"
+title="YouTube video player"
+frameborder="0"
+allowfullscreen></iframe>`,
+    `I watch cuz it’s entertaining and I stuck around cuz he’s just real compared to a lot of streamers, he’s doin great and I know he’s gonna keep doin better so just don’t give up even when it gets tough
+
+From, Illusion`,
+
+    `I keep coming back to Gewie’s streams because he is genuinely honest, kind, and authentic. He creates such a fun and friendly atmosphere that makes it easy to relax and enjoy watching. His charisma and sense of humor make every stream entertaining, but what really keeps me around is how welcoming he is to the community. It's clear that he cares about the people who watch, and that kindness makes his streams feel like a place people actually want to spend time in. That's why I continue to watch and support Gewie.
+
+From, Fae`,
+
+    `Hi
+
+From, Baby Bread`,
+`Hi Gewie, 
+
+It s me, your favorite Letty! So I got asked why I sticked around after a year of your streams. Come to think of it, I gotta admit You Are Funny 😁! I love the way you are so welcoming and caring about your community. The way you manage to interact with all platforms and make it inclusive. I wake up every morning hoping you are still streaming and even on my sick days I find joy in interacting with you and Chat. I havent met another streamer who who has made it to this many followers and still cares about his viewers and still manages to call everyone by their name. You are always so grateful for every gift big or small. The fact that you haven't missed a stream day and you manage to be stream everyday bringing such great energy makes us happy to be there for you and support you all the way. I hope all your future dreams comes true and I ll always be your Number# 1 favorite 😂
+
+Lots of luv, Letty 🫶`,
+
+`Dear Gewberton,
+
+I just wanted to say that I genuinely appreciate you and everything you put into your streams. You’ve been working your ass off, and even though I’ll never admit it to your face because I have a reputation to maintain 🤣, it really shows. You’re honestly one of the funniest people to watch, and a huge part of why your streams are so enjoyable is just being able to hang out, laugh, and absolutely bully each other for no reason. 😂 Our constant roasting might be 90% of our friendship at this point, but I wouldn’t trade it for anything. Jokes aside, I hope everything you have gone through and all the challenges you have overcome bring you joy to the moments you are experiencing now! I also really hope you know how much your hard work means to the people who watch you, including me. Sometimes you probably don’t realize just how much of an impact you have simply by being yourself. You make people laugh, you give people a place to come hang out and forget about whatever they might have going on, and you’ve created a community that people genuinely enjoy being a part of. That’s something really special, and you should be proud of it. I know streaming and putting yourself out there consistently isn’t always easy, and I know there are probably days where it feels like all the effort isn’t worth it. But please don’t forget that there are people who notice. People who appreciate the time, effort, and energy you put into what you do. I definitely do. I’m genuinely proud of you and how far you’ve come. It’s been really cool getting to watch you work toward what you want and continue to grow, and I hope you give yourself credit for that sometimes. You deserve to see just how much you’ve accomplished. And as much as I’m going to continue pretending you’re annoying and bullying you every chance I get, just know that underneath all of that, I really do care about you and I’m grateful for all the laughs, the memories, and the time we’ve spent hanging out. 💗 So keep doing what you’re doing, keep being ridiculously funny, keep chasing what makes you happy, and unfortunately for you, I’ll continue being here to bully you every chance I get. 🫶🤣 You’re doing better than you probably realize. Don’t ever forget that.
+
+Love Your Announce, Destinyyy 💗`,
+`So I watch Gewie and why I stick around is because I love the community and in the mornings he always puts a big smile on my face. Even when I am having a bad night i know I can count on you to do some crazy stuff and make my night. I love you as a friend and a streamer.
+
+- Alexis`,
+
+`I watch Gewie cuz I just like his content his very funny and Minecraft is one of my favorite games and I not even really into watching streams like that but I like watching Gewie, And it gives me something to watch at night when my baby can’t sleep.
+
+- Kayla`,
+
+`Gewie,
+
+I started watching your streams only around February of this year. I was drawn to your page by your humour, and the way you interact with the community. You made me feel welcome immediately. The way you remember names and recognize people who come back to stream, makes you feel like you’re a part of something special. The fact you stream everyday at the same time, helps me know I have something to look forward to on the hard days. I can always rely on you to help start my day off with a smile and it’s become a part of my daily routine that I absolutely love. Whenever stream ends, it’s comforting knowing I’ll get to enjoy another one the following morning! I’ve met some really funny and cool people through your community! I love how we all greet each other in chat everyday and look forward to seeing one another. You should be really proud of yourself for creating such a supportive and welcoming community. It’s because of you that we continue to come back. Thank you for being you. For your light hearted sense of humour, and for making us feel like a true community. Thank you for always bringing a light to the dark days. I know it’s cheesy and we troll you a lot, but you’ve really helped me through some shit and I’m forever grateful. All love♥️♥️
+
+-Meg`,
+
+`The reason I watch Gewie it's because I can relate to him with the ADHD and he's funny and watching him before school makes my day a little better and he has a really good community that cares enough to get up at to watch him at the same time every day Gewie you're the goat and you're the best streamer of them all auntboy supports you all the way.
+
+- Auntboy`,
+
+`The reason I stay is because how kind the community is and because Gewie is genuinely just a kind guy. If I didn't have a community like his I'd probably be in a really
+bad place in life so his community also saved me. 🙂 
+
+- Jaws`,
+
+`Hi Gewie,
+
+I started watching because your streams were entertaining, but I stayed because of the community you’ve built. It’s a place where I can relax after a long day, laugh, and forget about everything else for a little while. Working at the hospital can be stressful, so having a stream I can look forward to really means a lot. One of the biggest reasons I’ve stayed is because you’re genuinely yourself. You don’t put on an act, and I think that’s what makes your community so special. You’ve created a place where people can have fun, talk, and feel like they belong. I know streaming isn’t always easy, but what you do truly makes a difference. You’ve given people, including me, something to look forward to, and that means more than you probably realize. Thank you for the laughs, the memories, and for always showing up. I appreciate everything you do, and I’m excited to keep watching you grow. You deserve all the success that comes your way. 💜
+
+-Nova`,
+
+`I stayed watching Gewie because he’s actually interactive with his chat and so genuine about how much he appreciates everyone in his community there’s not alot of streamers who are like that and he takes everyone’s ideas into consideration plus he allows chat to choose what he does like if he plays cozy or do a challenge and he has funny reactions when something happens 😭 but yh he takes on fun challenges that chat picks for him and he’s fun to rage bait he’s the one streamer i actually stay up and ruin my sleep schedule to watch fr
+
+- Alejandro`,
+
+`Why I watch Gewie.. keeping it straight, he's a great vibe. I've been watching our boy for a year damn near and the whole time he's been the same awesome guy. Every new face, gift, comment, likes, he keeps the same exciting energy and that's something I didn't know I needed. Waking up and jumping in the streams before my eyes were open, building a community of spectacular people, and making memories I'll hold for a lifetime. That's what being part of this community has done for me and I'll never forget it. Honestly without Gewie I would be without a gem in my life. Handsome funny kind man he is. Thank you man, just being you has helped me step into the light and live again
+
+-from Spence/ DownRivDude`,
+`I watch gewie because of the way he makes me feel at home and cozy. the reason I've stuck around with him for so long is because of the energy he gives off and the way he treats chat and others
+
+- Formula`,
+
+`Gewie popped up on my fyp and I joined in and he was doing his little "I stream every day, I'm gonna be your favorite minecraft streamer" deal. I thought to myself, yeah okay. However, I was hooked. His positive energy, his ability to laugh at himself when he does silly things, his communicate with chat and the community is what made him my favorite all time streamer. The message I have for Gewie is, be kind to yourself during the tough times, and keep being yourself. You're doing an amazing job, and I am so happy you landed on my fyp. Proud of you!! ♥️🦝
+
+- Stacie B`,
+
+`There are a lot of creators on TikTok, but Gewie has always been different to me. His streams have become a part of my daily routine, not because I feel like I have to watch them, but because I genuinely want to. No matter what kind of day I’m having, I know I can join one of his lives and immediately feel like I’m surrounded by good energy. Whether I’m laughing at something completely ridiculous, watching the chaos unfold, or just listening while I get ready for work or unwind after a long day, his streams have become a place that feels comforting.
+
+One of my favorite things about his content is Minecraft. Watching his challenge runs is always entertaining, and seeing the incredible worlds and builds he creates never fails to amaze me. Every project he works on sparks new ideas for my own Minecraft worlds. I’ll catch myself thinking, “I want to try something like that,” or “That gave me an idea for my next build.” His creativity has inspired so many of my own projects, and it’s one of the biggest reasons I look forward to every stream.
+
+What makes Gewie stand out isn’t just that he’s entertaining—it’s the community he’s built. His lives feel welcoming, and somehow he has a way of making everyone feel like they belong. Even on days when I’m quiet and just lurking in chat, I still feel like I’m part of something. That’s a rare gift.
+
+As someone with ADHD, my brain is constantly bouncing from one thing to another, but his streams are one of the few places where I can settle in, laugh, and just enjoy the moment. They give me something to look forward to every day, and that’s more meaningful than I can really put into words. I’ve been watching for a long time because every stream feels genuine. He doesn’t have to put on an act or pretend to be someone he’s not. He’s funny, kind, and unapologetically himself, and I think that’s why so many people, including me, keep coming back. It’s not just about the content—it’s about the person behind it. There have been days when I needed a distraction, days when work was exhausting, and days when life just felt overwhelming. Somehow, tuning into one of Gewie’s lives has always helped make those days a little lighter. A few laughs can change the entire direction of a day, and his streams have done that for me more times than he’ll probably ever realize.
+
+Thank you, Gewie, for every morning stream, every Minecraft challenge, every hilarious moment, every amazing build, and every bit of chaos you’ve shared with your community. You may see it as simply going live, but for a lot of us, it’s become a bright spot in our day. Your streams are more than entertainment—they’re comfort, consistency, inspiration, and a reminder that even a small moment of joy can make a huge difference.
+
+I’m incredibly grateful to be part of your community, and I hope you know just how much your time, effort, creativity, and authenticity mean to the people who watch you. Thank you for inspiring me—not only to keep building in Minecraft, but to keep finding joy in the little things. Thank you for being exactly who you are.
+
+- Jen`,
+`Gewie has been the biggest inspiration for me. When I first got here, I followed under a different account. I was shy and didn't interact much. I created this account because I always knew that I wanted to create stories for others. I continued to follow and watch Gewie and began to come out of my shell little by little. He gave me such encouragement as he did for others who were considering pursuing similair or even different dreams. There were times I misunderstood certain things, and while I spoke up and told him how I felt, he never was discouraging. Now that I have more clarity, I realize that there are so many different facets that go along with becoming a streamer. It definitely is not easy. I know that Gewie gives it his all every single day, and I want nothing but the best for him in every day that follows. He continues to inspire, and when he is being real with himself, he knows which ones of us truly do hope the very best for him. We wish Kitty and Gewie the Happy Ever After they couldnt even possibly imagine beyond their wildest dreams. You got this Brah! 💜🌸🎀🌸
+
+- Storyia`,
+`Hi Gewie the reasons I watch your streams almost daily even though your late most days is because your funny, a nice guy, you may not be the best at the game but that doesn't get you down, you keep trying and improving and you make my days better when I watch you, oh ye and the real reason i watch you is for kitty the real owner of the craftedbygewie account the real star of the show. Love you lots Gewie keep pushing and you will be the next big streamer
+
+- bob`,
+`Why I watch gewie and what made me stick around because he is a very funny person, and he always put a smile on my face and he made me feel like family in his community, and I'm grateful for that and Gewie always made my day.
+
+- Mercedes`,
+`Gewie, scrolling tiktok one night I came across your steam. What made me stick around and come back every day was your personality and the way you make every stream so entertaining. It's always a good time, even when nothing crazy is happening. Although it's mostly crazy stuff happening 😂 Keep doing what you’re doing! 💜
+
+- Stacy`,
+
+`Gewie,
+
+For someone who never watched streamers, Gewie captivated my attention as a creator nearly 400 days ago now.
+
+While I do agree that quality is one of the best features in captivating an audience- it didn't start that way. Watching another human, through the power outs, audio issues, grind for 3k followers on TikTok, and achieve affiliate on twitch, I got to learn Gewie's story.
+
+Working at a pizza shop full time and dedicating his little time off to streaming is what caught my attention.
+
+I have a heart for people who have a stubborn stick of perseverance and determination. People who have a seemingly impossible dream. A seemingly impossible roadmap. But stick to it. Like a chain, that absolutely refuses to snap. That knot in your shoelace you can never untie.
+
+Gewie persevered.
+
+In the face of adversity. Gewie pivots. He finds a way.
+
+He continues to.
+
+Not only is he still, to this day, consistently streaming. He has successfully achieved affiliate on twitch. Now also streams on YT. He was promoted as a Popular live on TikTok. (And I'm sure there's so much else I've missed). 
+
+He also has a lovely community who show up ready for him to hit "Go Live", every morning. A community he also shows up for. One that there is no question- is one he genuinely cares for.
+
+Every conversation we held during my time as staff was always community focused. How we can offer the best server, streams, communication. Every little detail prioritized the community first.
+
+I've been in this community since its foundation, through hardships, and even returned after time away for those reasons. But most of all, out of respect. If I'm permitted to say, I'm proud of him.
+
+I look forward to what he builds in the future. There's no question his road continues on in this career. Only how it will adjust to his liking over time. I truly do continue to wish him well in this journey. But I know I won't have to. Wishing would mean to hope for results to come. Yet they come daily.
+
+Where this road may lead, no one can say Gewie never earned it. I think that's something to be proud of alone.
+
+All my best, Tiny.`,
+
+`Why I followed Gewie and why I have continued to be apart of his stream you ask? Idk I should have never followed. He is one of the cringest and ego full streamers that I know. Okay okay now that I have your attention, I honestly can’t remember what brought me to his stream. So much memorable time has passed it’s hard for me to remember a specific detail as such. I can say, he in a way, remind me of me. The curly headed lightskin who likes video games lmao. I however was just pushed into the business working route my whole life. So seeing his stream and watching him do what my 16 year old self and her 20 year old self would love to be doing. I think Gewie is one of the hardest, dedicated to his craft streamer out there. His daily effort on camera and behind the scenes is never ending. He is always looking for ways to better himself in the most unselfish way. He betters himself to provide us with a better and more engaging entertainment. The biggest one is he believes in himself and what he can accomplish. He makes a goal and drives to get there until it has been met. I could tell you a story of what has kept me around but I think you get the idea.
+
+#craftedbygewie
+#minecraft
+#craftedbyscooby
+
+- Scooby`,
+
+`Honestly I don’t know why I still watch gewie… I think it’s more because his raging that makes me want to come more… I honestly wanted to mod for him due to the fact that I know I can handle the stubbornness. But I love ragebaiting him and that’s my nature too! I think the one incident that kept me watching was honestly everyone wanting you to yodel
+
+I love you gewie I really do! And I feel like the raging between the both of us is fun… I know when your messing with me and I know when your not… our talks in dms and in vc even when I needed you to talk me down you were there for me! And I fully promise you I will show you more of my forever world as it comes together I promise bc this world that I’ve been working on the last week is the one! But your the one that got me into doing survival everything I say in chat in streaming DMs vcs general mod chat etc I mean it! Now you gotta tell me how many wigs you got! I can’t be this nice in a message and not insult you… you are my favourite but I’m your wifey so I gotta be the top for you… I love you Gewie
+
+- Bazzi N GEWIE WIFEY`,
+
+`Dear Gewie,
+
+Pooie, Boobie, Whorgis, Gewargis and so many more… I’ve been struggling to find the words to explain how much you mean to all of us not just me personally, because how am I meant to sum up everything we love about you on paper. Gewie you have one of the most beautiful souls I have ever met, I truly mean that. You have created not only friends throughout your journey but a second family. You’ve built a beautiful community, a place where people feel they belong and can truly be themselves. I will forever be grateful that I stumbled upon your silly little live stream because you have changed my life in more ways than one. Without knowing you have given me the strength to wake up in the morning and start my days on a positive note, you’ve helped me forget about any struggles, made me smile on days I wasn’t sure I could and laughed at my stupid jokes. Your caring nature is truly breathtaking, not just everything you do for us but hearing about your family and everything you do for them is so incredible. Your strength and determination are so inspiring, you have never once given up on your dream, not everyone would be able to get up every single day, put a smile on their face even on their worst days and do what you do. Your optimism is extraordinary, whether you’re being restricted or dying over and over again in hardcore you never struggle to find something good in your situation. Those are just some of the traits I admire about you, but if I listed them all I’m afraid this might turn into more of a book. I am so incredibly proud of you and I know you have a wonderful future ahead. I really hope you realise how many hearts you have touched and helped heal by just being yourself and I hope to one day get the chance to be half the person you are. Keep fighting for everything you deserve.
+
+- Lots of love Em xx`,
+
+`I started watching because I thought you were funny (big, if true), but I stayed because you somehow made watching a man place blocks for hours on end every day feel like hanging out with friends after a long day. Thank you for giving us a place to laugh, talk a little shit, spam corn, argue about whether every build is secretly a church, and somehow make planting 10,000 wheat entertaining. 😂 I’ve gotten to see just a small part of how much you put into this and how badly you want it, and it’s beyond inspiring to say the least. You work your ass off, you’re stubborn as hell, you want this more than anyone I’ve ever met, and even on the days where everything goes wrong, you still show up and keep going with a big ass smile on your face. I’m really fucking glad I wandered into your weird little corner of the internet, Gewie. Getting to watch you build this thing has been pretty damn special, and getting to be even a small part of it means more to me than I’ll probably ever be able to put into words. When this is all way bigger than it is now, I hope ya look back at these streams and realize they were just the beginning of something incredibly special. 💜
+
+Proud of ya, Gewie
+
+- Riss`,
+
+`I seen gewie on my fyp, seen he was live and i was lowk bored and looking for a new streamer to watch. When i joined, i absolutely loved the vibes so i followed. he said he had a discord and so i joined. and i absolutely love the community. hes hepled me through some of my hardest times in life and i just love supporting him
+
+- Levi`,
+
+`The reason I watch Gewie and why I stuck around was simply his energy and personality, he reads almost every chat and is always super appreciative of gifts and follows and is always talking chat and including them in ideas and builds for his worlds. He’s been doing this for over a year straight and he’s consistently streaming every day and gaining more and more popularity and I’m so proud of him!
+
+- Devin (simplistic)`,
+
+`dear my fair lady gewie every since the day we meet on a random scroll i loved watching you grow and learn your growth is amazing and you deserve all the love you get and cant wait to see much more
+
+- Obiwan`,
+
+`To: Gewie.
+
+I watch Gewie because he’s entertaining and nice, he has moments where he gets mad but it’s fine. I stick around because he talks to everyone and is nice to me and others, and I think he deserves the respect. My message to him is to keep going and don’t give up even when chat makes you so irritated you want to take a day off, you should take breaks every so often but do keep going and don’t give up!
+
+From: craftedbylulu`,
+
+`i watch gewie cause he’s funny and genuine! despite what people say about him he perseveres and still continues streaming! i’m always proud of him and will be forever!
+
+- Aspen`,
+
+`There was a situation that happened before I fully joined this community, and I appreciate Gewie so much because he didn’t buy into the bs and allowed me to stay around. This is the best community by far that I’ve been a part of. He could have very easily said I don’t want any drama so it’s probably best you don’t be involved. But he took a chance on me and I love and respect the hell out of him for it. I mean I love all you guys!!
+
+- Pooker`,
+
+`He is positive he doesn’t give up he isn’t fake on the camera he is nice to his viewers he is funny he tries really hard to make other people happy he makes my day better and he is my favorite streamer ever
+
+- Valentino (Val)`,
+
+`I watch him because he’s very chill and good at the game. His playing styles vary and he always addresses chat. And hes always so supportive.
+
+- CPvPFlint`,
+`You make me laugh at the most ridiculous things, brighten my days, even if just a touch, and you always give me little build ideas. And sometimes Charlie likes your voice too, which is weird in a sweet way.
+
+- Ta'Shan`,
+`I honestly never expected to become a regular of gewies live theres lots of minecraft streamers, but your streams became part of my morning routine. It’s nice having a place that’s just laughs, Minecraft, and good vibes without anything heavy. You always manage to make people smile, The jokes the Minecraft, and the way you mess around with everyone always make me laugh. You’ve built a really positive community, and that’s what made me stick around! Thanks for making mornings a little brighter for all of us.🌲⛏️✨
+
+- M`,
+
+`Okay Gewie, since apparently I’m being asked to explain why I watch your streams, I guess I’ll reluctantly give you the truth. 🙄
+
+First and foremost, let’s not lie to ourselves. A significant portion of my attendance is because Riss is in chat. If she wasn’t there, I’d probably be doing something productive.
+
+BUT… unfortunately your streams have actually become something I genuinely look forward to. You and your community have this weird way of feeling like one giant, slightly dysfunctional family. Between the chaos, the jokes, the ridiculous Minecraft moments, and everyone bullying you with love, it really does feel like hanging out with a big group of friends.
+
+And honestly, watching your streams has gotten me through a pretty tough time. Having somewhere I could come in, laugh, turn my brain off for a while, and just feel like I was part of something meant more to me than you probably realize.
+
+Which brings me to the part where I’m actually going to be nice, so enjoy this because it won’t happen often.
+
+I’m genuinely so proud of you for taking the leap to become a full time streamer and leaving your job. That takes a ridiculous amount of courage, especially when you’re betting on yourself like that. Seeing how dedicated you’ve been to streaming every single day, even on the days when things were hard or you probably didn’t feel like being on camera, is honestly inspiring.
+
+You’ve built something that people actually want to come back to every day, and that’s pretty damn cool.
+
+So yeah, Gewie. I watch because Riss is there.
+
+…but I stay because somehow you’ve created a little Minecraft corner of the internet that feels like family.
+
+Don’t let that go to your head, though. You’re still just the guy I watch while Riss is in chat. 😂
+
+- Chelsie`,
+`Okay, so I found Gewie on my FYP and the first thing that caught my eye was how cool his world looked, I mean I am a Minecraft lover have played since i was a little girl and to me it was just amazing seeing how it looked now initially I didn’t follow because I wasn’t big on following people on tik tok but then for some reason his live kept finding me so I decided to follow. As I watched I really liked his vibe he seemed so genuine and kind. What made me stick is when I started becoming more consistent in his live he started noticing and welcoming me and I was like “wow, a streamer that actually cares who’s watching”. I may not always make it to his lives but when I do I love them. My message to him is to keep going! I can tell how much he loves it and how much he cares about his community and vice versa. It’s like a family and I love that.
+
+- Gaby`,
+
+`I watch Gewie bc his streams are so chill and relaxing and honestly his attention and interactions with the chat made me stay. His stream is a little early for me so I do be missing it a lot bc he starts streaming when I’m dead asleep 🤣 but when I’m there it’s always fun and I love Minecraft too so that definitely keeps my retention, And also I like how he takes jokes from the chat and the back and forth banter is so fun and refreshing compared to a lot of other streams I’ve watched and been a part of, I think it has more to do with the individual personality of the streamer and amount of viewers that are on bc I know also it gets overwhelming with a lot of viewers and fast moving chats.
+
+- Noosh`,
+
+`I watch Gewie everyday because, 12 yrs ago I became disabled due to auto immune diseases and it’s been lonely on the friend front for many years, but gewie and his community make me feel like I’ve found my people, you keep me laughing everyday and Gewies dedication and heart are a rare thing nowadays, he genuinely cares about everyone, your a special person and i hope all your dreams come true!
+
+- KezzaBella`,
+
+`Hi Gewie,
+
+Just wanted to let you know that I love watching your streams because, over time, you’ve genuinely become a part of my daily routine and a huge source of comfort for me. Whether I’ve had a great day or a really difficult one, I always look forward to your streams because of the kind of person you are, the energy you bring, and the amazing community you’ve built.
+
+I recently ended a 4½-year relationship, and honestly, having your streams to look forward to at the end of the night has helped me more than you probably realize. It gives me something positive to look forward to, helps me get my mind off things, and always brings a smile to my face.
+
+I always come back to your streams because of your dedication, drive, personality, and just the genuine person you are. There’s something really special about the community you’ve created, and it’s a place that I’ve come to really appreciate and enjoy being a part of.
+
+I just truly want to thank you Gewie for everything you do. You probably don’t realize how much of an impact you can have on someone without even knowing it. Sometimes simply being yourself, going live, and creating a place where people can laugh and feel comfortable can mean so much to someone who might be having a hard time.
+
+Thank you for consistently being someone I can look forward to watching and for creating such an incredible community. I’m genuinely grateful I found your streams, and I hope you know that what you do matters more than you probably realize. ❤️
+
+- Joli`,
+
+`Hey man i watch you because of the fact that each hardcore challenge you find the silliest ways to die it cracks me up and also because your builds and creative drafts make room for a starting point on my own builds.
+
+- Jake`,
+
+`Ya know Gewargis it’s been a hell of a year watchin you grow. You really are a caring person with an awesome personality. I know i dont tune in as much due to my personal life but anytime i do get to tune in its always a good time and a hell of a vibe. Keep growing an bein amazing handsome.
+
+- nina`,
+
+`I love Gewie's streams because he's always such a positive vibe! He's extremely friendly and welcoming, and has created the best community to hang out in. He always shows up with a smile ☺️ I love watching the challenges and then winding down with some good builds!
+
+- angie`,
+
+`Offcourse, I think Gewie is really kind and hes voice is Nice to listen to, also that he reads the chats and always want to help people with their computer or with minecraft is so nice of Gewie.
+
+- tatiana`,
+
+`As an awkward individual and self-proclaimed fellow streamer, I’d just like to say that you inspire me to try against what I think my odds are. You accept me for who I am and you make me feel seen (when you’re not missing comments 😂), loved, and appreciate every time I come in! You’re the best streamer I’ve ever had the honor of stumbling across. I look forward to watching your journey take you to new heights. Don’t forget about little ol lurking me, wouldya.. love you bsf and cheers to all your future success🥰👏🏾
+
+- All things Sensory joker`,
+
+`When i first joined your live gewie, i was instantly intrigued, your so entertaining and put your best effort into acknowledging each and every person, i havent been there since the beginning but im sure you have come a long way and have alot more planned ahead. Continue being the gewie we all know and love, never change, you have a bright future ahead of you ~whims❤️ ps. I also stayed in your lives because of KITTY😏😉`,
+
+`Gewie I started watching your streams a couple months ago now, and your positive energy and vibes is what brought me back every day since then. Keep doing what your doing because the community you’ve grown is the best I’ve seen ❤️❤️❤️
+
+- Laura`,
+
+`So Usually i like to help i watch him since he was a small streamer and i stayed because hes like the same as caseoh except Minecraft, hes genuine, He doesnt give up, He can be funny and overall hes him and i love him for that. I think or would hope to think thats what we all love him for also i am really happy to be able to help him and watch him grow and become what he is today. I am proud!
+
+- Nozu`,
+
+`I watch Gewie because the vibes are absolutely brilliant. He’s always so on the ball with chat, makes everyone feel welcome, and constantly gets people involved.
+There’s such a real, lovely sense of community in every single one of his streams.
+
+I’ve watched the odd streamer here and there before, but nobody’s ever had me coming back daily like Gewie does!
+And of course, can’t forget Kitty too 😸 -JadeKay`,
+
+`I love watching gewie because his streams are really entertaining to watch. he has a good personality and i find the way he reacts to things funny. i could sit and watch his streams for ages without getting bored 🌽 - Willem`,
+
+`To CraftedByGewie:
+
+The blocks you place every day are building more than a Minecraft world.
+
+Every stream, every late morning, every moment you show up for your community matters.
+
+Some people may only see a game, but your viewers see consistency, dedication, and a creator who refuses to quit.
+
+Keep mining. Keep crafting. Keep showing up.
+
+You’re not doing this for nothing. You’re building something that takes time, and one day you’ll look back and realize all those ordinary streams became the foundation of something extraordinary.
+
+- Glitchette`,
+
+`I watch Gewie because he’s genuinely the most wholesome creator I’ve seen, and as a creator myself I look up to him for his drive and the energy he puts into making the community better for not just him but for everyone. I stuck around because he’s not only entertaining but constantly makes everyone feel welcome which isn’t the easiest on a big platform.
+
+- lblame_hayden`,
+
+`Hey girl! Lauren sent me her message for Gewie! hi gewie!! just wanted to give you a big thank you for being one of the sweetest, funniest, most gentle and caring people i’ve ever met. you should be so proud of yourself for not only how far you’ve come in life but how you continue to hold yourself and treat everyone with the utmost respect and kindness no matter what. you’ve truly made your community into a little family away from home and you deserve all the success you’ve gained over the past while. i’m so happy i stumbled upon your cozy little corner of the internet and gotten to see what a truly beautiful person you are inside and out. here’s to many more laughs and memories together, and i speak for everyone when i say, we wouldn’t want to do it with anyone else 🩷
+
+- lots of love lauren`,
+
+`Yeah sure I would love to participate!
+
+And why do I watch gewie well it's probably because he seems genuine and doesn't clip farm also the fact that he is way more chill and interacts with his community alot too
+
+And my message for gewie is "You are an amazing streamer and I wanna help you achieve your goals, even if I may not be as active because of school work. And if you ever get emotional over smth just know I'm down to talk. I love you man."
+
+Welp that was it kinda cringe ngl but I meant it. Anyways lucki have an amazing day❤️, cya.
+
+- Matheus`,
+
+`I started watching Gewie before he hit a hundred followers while I was at work. I would join his live because I found them entertaining and I would have a reason not to scroll on. I started following before he hit the 100-follower mark and don't regret it. I loved seeing his reactions as he relearned how to play the game and still enjoy his reaction when something crazy or unexpected happens. When I started watching he was very uncertain about his success at being a streamer and I liked seeing his self-confidence grow in that regard. There are times that I might not feel like watching his stream but will still join and just lurk. There is only one time that I purposefully left the stream and that is when he took the dog to the Nether and killed it. I think at this point I feel that he is a member of my family that I have never physically met. I have seen him on good days and bad. I love his spirit, open emotions, morality and honesty. I can't wait to see how his future will play out. My watch times have dropped recently due to prioritizing sleep on my days off but will always hop on the live as soon as I wake, even if I might go back to sleep shortly after.
+
+- Rhonda`,
+
+`here’s my message!
+
+i really enjoy watching Gewie’s live because of how cozy the environment always is. when he first came across my fyp i was hooked and i stayed because he immediately started joking around with me and i look for that in streamers. watching his lives always help distract me during the mornings when i dont feel good. plus putting his lives on as background noise so i can sleep has also been really nice, especially when i wake up and he’s still live haha. i’m really excited to stick around and catch more lives in the future 🖤
+
+- Rose`,
+
+`Gewie!!
+I’m not the best with the words but you should know. I am exceedingly proud of you! For being brave enough to give this a go, brave enough to leave the job and to follow your dreams, truly believing in yourself. You are definitely an inspiration to others.
+You show up every single day and give it everything you've got. That's not a small thing. A lot of people would coast, but you go above and beyond, over and over, for the people who tune in to watch you. It shows, and it doesn't go unnoticed.
+You're one of the funniest people I know. You have this gift for turning an ordinary moment into something that makes the whole chat laugh, and you brighten people's days without even trying. There are friends and followers that open up your live after a rough day or week and leave smiling because of you. That's a real thing you do for people and what hooked me to come back day after day.
+The creativity you bring is something else. Yes, I’m talking about Cozy. The way your mind works, the things you build, the adventures you drag us all along on, none of it is ever boring. You take chances, you try wild ideas, and you make it fun to just come along for the ride.
+But more than any of that, you're just a genuinely good person. The kind who makes people feel welcome and included. That's rarer than talent, and you've got both.
+So thank you, for the laughs, the yapping and creativity, but could we get some consistent punctuality.
+The whole community is lucky to have you, and so am I. I’m not going anywhere!
+
+- Ashwee`,
+
+`Oh, Gew Buggggg aka Sunshineee🥰
+I was going through a really tough time when I started watching you and at the time you were working on a build in your cozy world. I still remember which one I just don’t know what it was for🤦🏻‍♀️ lol but I followed you right away! I would just lurk at first then I started talking a little bit then you started to interact more with me so then I started too as well..🤗 I would try and watch almost everyday but sometimes I couldn’t. Watching you made me not think about the things that I was going through and of course it made me feel so much better. I enjoy watching you stream, like it literally became a regular routine that I just had to do everyday and still do! To be honest you being you helped me so much. I didn’t know you on a personal level but I could just tell you were pretty amazing, kind, and very thoughtful. Then you made me a mod and I was so excited about it!🤩I know I suck at being a mod lol I miss all the meetings but I’m gonna try and make one soon. I’m also just shyyy haha so I be nervous lol 😬 but I do try and help in the live when I can! You’re an amazing person and streamer! You really have helped me a lot, so thank you so much! I hope you continue to stream and become an even bigger streamer!🙌🏼 But don’t forget about usss who have been here for a long time! I may not have been here since day one but I’ll be here till the end!💯 Hopefully you never stop streaming tho!! There are times I’ll get on but be afk, shoot I even fall asleep sometimes lol but I’m here always!! Again, thank you so much for being you and streaming everyday especially on holidays!! 🫶🏼 I hope one day I get to meet you but for now you’ll always be one of my favorite streamers and one of my favorite people😝 Lol don’t worry, I only have like 2-4 streamers that I always watch but mainly it’s just YOU and one other person so yeaaah, you’re at the top💙 Don’t ever stop streaming and believing!🤪 love you always gewww😇
+
+- Monique`,
+
+];
+
+let openedDoors = 0;
+
+document.querySelectorAll('.door').forEach((door, index) => {
+    door.addEventListener('click', () => {
+if (!door.classList.contains('opened')) {
+    door.classList.add('opened');
+    door.textContent = '❤️';
+    openedDoors++;
+}
+        document.getElementById('messageText').innerHTML = messages[index];
+        document.getElementById('messageBox').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    });
+});
+
+function closeMessage() {
+    document.getElementById('messageBox').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+
+    if (openedDoors === document.querySelectorAll('.door').length) {
+        document.getElementById('messageText').innerHTML =
+            `You opened every door. ❤️
+
+Thank you for being you, Gewie.
+
+Every laugh, every stream, every build, every late morning, and every moment you spend with this community means more than you probably realize.
+
+These messages are just a small way for everyone to remind you how much you are appreciated.
+
+You built this community, but you also built a place where people feel welcome, entertained, and at home.
+
+Thank you for everything. I hope you never forget how many people are rooting for you. ❤️`;
+
+        document.querySelector('#messageBox h2').innerHTML = '❤️ You Made It! ❤️';
+        document.getElementById('messageBox').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    }
+}
+</script>
+</body>
+</html>
